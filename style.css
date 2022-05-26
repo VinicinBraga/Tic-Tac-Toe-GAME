@@ -30,6 +30,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.cell.x,
+.cell.circle {
+  cursor: not-allowed;
 }
 
 .cell:nth-child(1),
@@ -51,6 +57,32 @@ body {
 .cell:nth-child(8),
 .cell:nth-child(9) {
   border-bottom: none;
+}
+/* X */
+.cell.x::before,
+.cell.x::after {
+  content: "";
+  height: calc(100px * 0.15);
+  width: calc(100px * 0.9);
+  background: white;
+  position: absolute;
+}
+.cell.x::before {
+  transform: rotate(45deg);
+}
+.cell.x::after {
+  transform: rotate(-45deg);
+}
+
+/* Circle */
+.cell.circle::before,
+.cell.circle::after {
+  content: "";
+  height: calc(100px * 0.9);
+  width: calc(100px * 0.9);
+  background: white;
+  position: absolute;
+  border-radius: 50%;
 }
 
 .winning-message {
