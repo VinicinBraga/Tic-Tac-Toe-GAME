@@ -4,6 +4,8 @@ const winningMessage = document.querySelector("[data-winning-message]");
 const winningMessageTextElement = document.querySelector(
   "[data-winning-message-text]"
 );
+const restartBtn = document.querySelector("[data-restart-btn]");
+
 let isCircleTurn;
 
 const winningCombinations = [
@@ -18,11 +20,16 @@ const winningCombinations = [
 ];
 
 const startGame = () => {
+  isCircleTurn = false;
+
   for (const cell of cellElements) {
+    cell.classList.remove("circle");
+    cell.classList.remove("x");
     cell.addEventListener("click", handleClick, { once: true });
   }
-  isCircleTurn = false;
-  board.classList.add("x");
+
+  setBoard();
+  winningMessage.classList.remove("show-winning-message");
 };
 
 const endGame = (isDraw) => {
@@ -48,9 +55,7 @@ const placeMark = (cell, classToadd) => {
   cell.classList.add(classToadd);
 };
 
-const swapTurns = () => {
-  isCircleTurn = !isCircleTurn;
-
+const setBoard = () => {
   board.classList.remove("circle");
   board.classList.remove("x");
 
@@ -59,6 +64,11 @@ const swapTurns = () => {
   } else {
     board.classList.add("x");
   }
+};
+
+const swapTurns = () => {
+  isCircleTurn = !isCircleTurn;
+  setBoard();
 };
 
 const handleClick = (e) => {
@@ -78,3 +88,4 @@ const handleClick = (e) => {
 };
 
 startGame();
+restartBtn.addEventListener("click", startGame);
