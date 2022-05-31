@@ -1,6 +1,6 @@
 # Projeto-Tic-Tac-Toe-GAME
 
-Jogo da Velha feito com HTML, CSS e JavaScript
+Jogo da Velha(Tic-Tac-Toe) feito com HTML, CSS e JavaScript
 
 <p align="center">
   <img src="./images/Initial.png" width="805" title="Initial game">
