@@ -1,4 +1,4 @@
-# Projeto-Tic-Tac-Toe-GAME
+## Projeto-Tic-Tac-Toe-GAME
 
 Jogo da Velha(Tic-Tac-Toe) feito com HTML, CSS e JavaScript
 
